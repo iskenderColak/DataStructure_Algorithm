@@ -132,8 +132,12 @@ public class PhonebookLinkedList {
 
                 // case 1: head
                 if (current == head) {
-                    head = current.next;
-                    current.next = null;
+                    if (size == 1) {
+                        head = tail = null;
+                    } else {
+                        head = current.next;
+                        current.next = null;
+                    }
                 }
 
                 // case 2: tail
