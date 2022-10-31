@@ -118,6 +118,44 @@ public class PhonebookLinkedList {
         }
     }
 
+    public void deleteByFirstName(String firstName) {
+
+        // check if empty
+        if(isEmpty()) System.out.println("List is empty!!!");
+
+        // assign prev and current with the head
+        PhoneBookNode current = head;
+        PhoneBookNode prevToCurrent = head;
+
+        while (current != null) {
+            if (current.contact.firstName.equals(firstName)) { // there is a match
+
+                // case 1: head
+                if (current == head) {
+                    head = current.next;
+                    current.next = null;
+                }
+
+                // case 2: tail
+                else if (current == tail) {
+                    tail = prevToCurrent;
+                    tail.next = null; // Ex -Tail will be eligible for Garbage Collection
+                }
+
+                // case 3: middle
+                else {
+                    prevToCurrent.next = current.next;
+                    current.next = null; // Current will be eligible for Garbage Collection
+                }
+                // after deletion
+                size --;
+            }
+            // move forward on the elements of the list
+            prevToCurrent = current;
+            current = current.next;
+        }
+    }
+
 
 }
 

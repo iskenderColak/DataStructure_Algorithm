@@ -6,7 +6,9 @@ public class PhoneBookApp {
 
     public static void main(String[] args) {
 
+
         PhonebookLinkedList myPhoneBook = new PhonebookLinkedList();
+
         myPhoneBook.add(new Contact("Glenio", "Faria", "glenio.faria@gmail.com", "8787899"));
         myPhoneBook.add(new Contact("Ekaterina", "Sementeva", "ekaterina.sementeva@gmail.com", "435454345"));
         myPhoneBook.add(new Contact("Yuliia", "Karnoza", "yulia.karnoza@gmail.com", "879898789"));
@@ -19,7 +21,7 @@ public class PhoneBookApp {
         myPhoneBook.add(new Contact("Mehmet", "TheTeacher", "mehmet@theteacher.com", "46566765"));
         myPhoneBook.add(new Contact("Yusuf", "Hero", "yusuf@hero.com", "9088787675"));
 
-
+        myPhoneBook.deleteByFirstName("Yusuf");
         System.out.println(myPhoneBook.isEmpty());
         System.out.println(myPhoneBook.size());
         System.out.println("********************************");
@@ -29,13 +31,15 @@ public class PhoneBookApp {
         System.out.println("********************************");
         System.out.println(myPhoneBook.findByFirstName("Iskender").contact);
         System.out.println("********************************");
-        System.out.println(myPhoneBook.findAllByLastName("Colak"));
+        System.out.println(myPhoneBook.findAllByLastName("Hero"));
         System.out.println("********************************");
         myPhoneBook.deleteFirstNode();
         myPhoneBook.deleteLastNode();
         System.out.println("********************************");
         myPhoneBook.printPhoneBook();
         System.out.println(myPhoneBook.size());
+        System.out.println("********************************");
+        myPhoneBook.deleteByFirstName("Glenio");
 
     }
 
