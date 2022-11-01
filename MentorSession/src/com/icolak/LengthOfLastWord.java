@@ -7,10 +7,12 @@ public class LengthOfLastWord {
         String s1 = "Hello world";
         String s2 = "   fly me  to  the  moon   ";
         String s3 = "luffy is still joyboy";
+        String s4 = "a";
 
         System.out.println(lengthOfLastWord(s1));
         System.out.println(lengthOfLastWord(s2));
         System.out.println(lengthOfLastWord(s3));
+        System.out.println(lengthOfLastWord(s4));
 
     }
 
@@ -23,6 +25,10 @@ public class LengthOfLastWord {
             else {             // if there is a letter (this is the last letter of last word)
                 do {
                     length ++;  // increase the length of that word
+
+                    if (i == 0) // prevent index from out of range exception
+                        return length;
+
                     i --;       // keep iterating the index
                 } while(Character.isLetter(str.charAt(i))); // till the beginning of the last word
             }
