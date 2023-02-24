@@ -15,6 +15,8 @@ public class S1_String_Anagram {
         System.out.println(isAnagram3("anagram", "nagaram"));
         System.out.println("************************");
         System.out.println(isAnagram4("anagram", "nagaram"));
+        System.out.println("************************");
+        System.out.println(isAnagram5("anagram", "nagaram"));
     }
 
     public static boolean isAnagram1(String s, String t) {
@@ -85,6 +87,22 @@ public class S1_String_Anagram {
         Set<Character> keys = map.keySet();
         for (Character key : keys) {
             if (map.get(key) != 0) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    public static boolean isAnagram5(String s, String t) {
+        int[] alphas = new int[26];
+        for(char ch : s.toCharArray()){
+            alphas[ch-'a']++;
+        }
+        for(char ch : t.toCharArray()){
+            alphas[ch-'a']--;
+        }
+        for(int i : alphas){
+            if(i != 0){
                 return false;
             }
         }
