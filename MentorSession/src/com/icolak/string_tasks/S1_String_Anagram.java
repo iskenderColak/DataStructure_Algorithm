@@ -1,6 +1,8 @@
 package com.icolak.string_tasks;
 
 import java.util.Arrays;
+import java.util.HashMap;
+import java.util.Set;
 import java.util.TreeSet;
 
 public class S1_String_Anagram {
@@ -11,6 +13,8 @@ public class S1_String_Anagram {
         System.out.println(isAnagram2("anagram", "nagaram"));
         System.out.println("************************");
         System.out.println(isAnagram3("anagram", "nagaram"));
+        System.out.println("************************");
+        System.out.println(isAnagram4("anagram", "nagaram"));
     }
 
     public static boolean isAnagram1(String s, String t) {
@@ -53,6 +57,34 @@ public class S1_String_Anagram {
             if (t.contains(currentSChar)) {
                 t = t.replaceFirst(currentSChar, "");
             } else {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    public static boolean isAnagram4(String s, String t) {
+        if (s.length() != t.length()) return false;
+        HashMap<Character, Integer> map = new HashMap<>();
+
+        for (int i = 0; i < s.length(); i++) {
+            if (map.containsKey(s.charAt(i))) {
+                map.put(s.charAt(i), map.get(s.charAt(i)) + 1);
+            } else {
+                map.put(s.charAt(i), 1);
+            }
+        }
+
+        for (int i = 0; i < t.length(); i++) {
+            if (map.containsKey(t.charAt(i))) {
+                map.put(t.charAt(i),map.get(t.charAt(i)) - 1);
+            } else {
+                return false;
+            }
+        }
+        Set<Character> keys = map.keySet();
+        for (Character key : keys) {
+            if (map.get(key) != 0) {
                 return false;
             }
         }
