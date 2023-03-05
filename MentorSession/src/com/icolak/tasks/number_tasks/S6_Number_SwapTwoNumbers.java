@@ -1,4 +1,4 @@
-package com.icolak.number_tasks;
+package com.icolak.tasks.number_tasks;
 
 public class S6_Number_SwapTwoNumbers {
 

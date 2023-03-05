@@ -1,4 +1,4 @@
-package com.icolak.string_tasks;
+package com.icolak.tasks.string_tasks;
 
 import java.util.Arrays;
 import java.util.regex.Matcher;

@@ -1,4 +1,4 @@
-package com.icolak.string_tasks;
+package com.icolak.tasks.string_tasks;
 
 public class S2_String_PassWordValidation {
 
