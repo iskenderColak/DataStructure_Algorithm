@@ -5,13 +5,16 @@ public class ChessMove {
     public static void main(String[] args) {
 
         System.out.println(run("5h", 11, 25));
-        System.out.println(run("2b", 3, 2));
+        System.out.println(run("2b", 7, 2));
 
     }
 
     public static String run(String startPosition, int R, int C) {
         int row = startPosition.charAt(0) + (R % 8);
         int column = startPosition.charAt(1) + (C % 8);
+        if (row > 8) {
+            row = row -8;
+        }
         if (column - 96 > 8) {
             column = column - 8;
         }
