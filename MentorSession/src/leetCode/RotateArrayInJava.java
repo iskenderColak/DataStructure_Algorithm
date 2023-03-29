@@ -57,13 +57,13 @@ public class RotateArrayInJava {
         System.out.println(Arrays.toString(arr));
     }
 
-/*
-    1. Divide the array two parts: 1,2,3,4 and 5, 6
-    2. Rotate first part: 4,3,2,1,5,6
-    3. Rotate second part: 4,3,2,1,6,5
-    4. Rotate the whole array: 5,6,1,2,3,4
-    -- Space is O(1) and time is O(n).
- */
+    /*
+        1. Divide the array two parts: 1,2,3,4 and 5, 6
+        2. Rotate first part: 4,3,2,1,5,6
+        3. Rotate second part: 4,3,2,1,6,5
+        4. Rotate the whole array: 5,6,1,2,3,4
+        -- Space is O(1) and time is O(n).
+     */
     public static void rotate3(int[] arr, int k) {
 
         k = k % arr.length;
@@ -96,21 +96,3 @@ public class RotateArrayInJava {
         }
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
